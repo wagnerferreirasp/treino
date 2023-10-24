@@ -1,0 +1,78 @@
+/* Estilo geral da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    table-layout: fixed; /* Evita que as células se expandam para além da largura da tabela */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+    word-wrap: break-word; /* Garante que o texto dentro das células não ultrapasse os limites */
+    white-space: normal;  /* Permite que o texto seja quebrado em várias linhas, se necessário */
+}
+
+th {
+    font-size: 24px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+tr > *:nth-child(odd) {
+    background-color: lightblue;
+}
+
+tr > *:nth-child(even) {
+    background-color: pink;
+}
+
+/* Estilo para dispositivos desktop */
+@media (min-width: 601px) {
+    table {
+        font-size: 16px; /* Ajusta o tamanho da fonte para desktop */
+        width: 100%; /* A tabela ocupa toda a largura disponível */
+        table-layout: fixed; /* Evita que as células se expandam e causem overflow */
+        overflow-x: hidden; /* Impede o scroll horizontal */
+    }
+
+    th, td {
+        padding: 12px 8px; /* Ajusta o padding das células para uma aparência mais limpa */
+        border: 1px solid #ddd; /* Usa uma borda mais suave para a tabela */
+        text-align: center;
+        vertical-align: top;
+        word-wrap: break-word; /* Permite que o texto dentro das células seja quebrado para não ultrapassar a largura */
+        white-space: normal; /* Permite a quebra de linha do conteúdo */
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-size: 18px; /* Ajusta o tamanho da fonte para os cabeçalhos */
+    }
+
+    /* Ajuste no tamanho das imagens para que não quebrem a largura das células */
+    img {
+        max-width: 100%; /* Faz com que a imagem não ultrapasse a largura da célula */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+
+/* Ajuste para quando há div dentro de uma célula com input marcado */
+div:has(input:checked) {
+    filter: grayscale(0%);
+    background-color: #ccc;
+}
+
+/* Evita o overflow no body ou html */
+body, html {
+    overflow-x: hidden; /* Impede o scroll horizontal no body */
+    margin: 0; /* Remove margens padrões */
+    padding: 0; /* Remove padding padrões */
+}
