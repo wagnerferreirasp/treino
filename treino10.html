@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Treino 7</title>
+    <link rel="stylesheet" href="contador.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20190901/ourlarge/pngtree-body-building-icon-in-trendy-style-isolated-background-png-image_1718572.jpg">
+    <script src="contador.js" defer></script>
+    <script src="seletor.js" defer></script>
+</head>
+<body>
+<label for="treino-selector">Selecione o treino:</label>
+<select id="treino-selector">
+    <option value="">Selecione</option>
+</select>
+
+<div id="countdownContainer" class="countdown-container" style="display: none;">
+    <div class="button-container">
+        <button onclick="startCountdown(40)">40</button>
+        <button onclick="startCountdown(45)">45</button>
+        <button onclick="startCountdown(50)">50</button>
+        <button onclick="startCountdown(60)">60</button>
+        <button onclick="startSpecialCountdown()">40/20</button>
+    </div>
+    <h2 id="countdownDisplay">Descanso: 0 segundos</h2>
+    <div class="arrow-buttons">
+        <button id="upButton">↑</button>
+        <button id="downButton">↓</button>
+    </div>
+</div>
+
+<audio id="alarmSound" src="https://www.online-stopwatch.com/html5/timers/sounds/bell.mp3"></audio>
+<audio id="alarmSound20" src="https://www.online-stopwatch.com/html5/race-timers-clock-mode/sounds/airhorn.mp3"></audio>
+
+<div class="table-container">
+    <table id="treino-tabela" class="hidden">
+        <tr id="header-row">
+            <th>Wagner A <br> (Peito, ombro, tríceps)</th>
+<th>Gabi A <br> (Glúteos, Posterior de Coxa e Abdômen)</th>
+<th>Wagner B <br> (Costas, Bíceps)</th>
+<th>Gabi B <br> (Costas, Bíceps e Ombros)</th>
+<th>Wagner C <br> (Pernas e Abdômen)</th>
+<th>Gabi C <br> (Quadríceps, Glúteos e Panturrilhas)</th>
+        </tr>
+        <tr id="data-row">
+                                <td>
+                    
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Supino reto </h3><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm_Y_weC1JRvhQe_QPGcW4_DHbAA_JJhLOmA&s" style="width: 200px; height: 150px;"><br>(barra ou halter)<br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Supino inclinado </h3><img src="https://ambr.com.br/wp-content/uploads/2024/12/supino-articulado-inclinado.jpg" style="width: 200px; height: 150px;"><br>(halter)<br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Crucifixo </h3><img src="https://www.bodynutry.ind.br/images/uploads/FILE-20170531-1831HFCX9CHGP48D.jpg" style="width: 200px; height: 150px;"><br>(máquina ou halter)<br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Elevação lateral</h3><img src="https://static.strengthlevel.com/images/exercises/dumbbell-lateral-raise/dumbbell-lateral-raise-800.jpg" style="width: 200px; height: 150px;"><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Desenvolvimento com halteres livre</h3><a href="https://www.youtube.com/shorts/5I7ogOjvdnc" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://treinomestre.com.br/wp-content/uploads/2018/10/desenvolvimento-arnold-.jpg" style="width: 200px; height: 150px;">
+</a><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Tríceps na polia </h3><a href="https://www.youtube.com/shorts/eJHyVyKVMZ4" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://blog.ciaathletica.com.br/wp-content/uploads/2023/05/Cia-Athletica-Triceps-corda-Autores-Grupo-S2-Marketing-Freepik.jpg" style="width: 200px; height: 150px;">
+</a><br>(corda)<br>3	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Tríceps francês </h3><a href="https://www.youtube.com/shorts/jY5tG4O8BjM" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://image.tuasaude.com/media/article/ai/th/triceps-frances_75585.gif?width=686&height=487" style="width: 200px; height: 150px;">
+</a><br>(halter)<br>3     10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                    </td>                    <td>
+                    
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Avanço com halteres </h3><a href="https://www.youtube.com/shorts/nFWardGq1Uo" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://ditenisnope.wordpress.com/wp-content/uploads/2017/04/avanc3a7o-com-halteres.jpg" style="width: 200px; height: 150px;">
+</a><br>(passada) se não tiver espaço na academia, pode fazer parada no lugar mesmo<br>4x	10a12 cada perna<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Stiff com halteres ou barra</h3><img src="https://www.mundoboaforma.com.br/wp-content/uploads/2021/09/levantamento-terra-deadlift-stiff-com-halteres-1.gif" style="width: 200px; height: 150px;"><br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Cadeira flexora</h3><img src="https://treinomestre.com.br/wp-content/uploads/2017/11/cadeira-flexora-musculos-solicitados.jpg" style="width: 200px; height: 150px;"><br>3x	12a15<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Elevação pélvica HP </h3><a href="https://www.youtube.com/shorts/_i6qpcI1Nw4" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://cdn.shopify.com/s/files/1/0449/8453/3153/files/Hip_Thrust_Muscles_Worked_600x600.jpg?v=1703038115" style="width: 200px; height: 150px;">
+</a><br><a href="https://www.youtube.com/shorts/5eZjU7vMJK4" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  Video 2
+</a><br>(com carga)<br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Glúteo na polia </h3><img src="https://i.vimeocdn.com/video/1156489005-a90982e39e55be34717e0fd2aed075b844316cf89dd624e89e722cadb5db3526-d?f=webp" style="width: 200px; height: 150px;"><br>(coice)<br>3x	12a15<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Elev. pernas </h3><a href="https://www.youtube.com/shorts/DWRWPS2hQAE" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://www.hipertrofia.org/blog/wp-content/uploads/2019/04/abdominal-invertido-com-pernas-na-vertical.gif" style="width: 200px; height: 150px;">
+</a><br>(abs infra solo)<br>3x   12a5<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                    </td>                    <td>
+                    
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Puxada frontal aberta</h3><img src="https://grandeatleta.com.br/blog/wp-content/uploads/2022/10/puxada-aberta-frente-polia-pulley-1024x597.jpg.webp" style="width: 200px; height: 150px;"><br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Remada curvada </h3><a href="https://www.youtube.com/shorts/gUBuI0nWuGY" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://i.pinimg.com/originals/2b/c3/aa/2bc3aa83af332266377d350f04ddb1da.jpg" style="width: 200px; height: 150px;">
+</a><br>(barra ou halter)<br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Remada unilateral maquina</h3><a href="https://www.youtube.com/shorts/C2U7EB3G3bk" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_JH1HM-R_f093cSdYFi0S2N0ED9bZMrG-wA&s" style="width: 200px; height: 150px;">
+</a><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Rosca direta </h3><img src="https://grandeatleta.com.br/wp-content/uploads/2018/07/rosca-direta-barra-reta-ou-w.jpg" style="width: 200px; height: 150px;"><br>(barra)<br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Rosca alternada </h3><img src="https://treinototal.com.br/wp-content/uploads/2024/08/rosca-alternada.gif" style="width: 200px; height: 150px;"><br>(halter)<br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Rosca martelo</h3><img src="https://treinototal.com.br/wp-content/uploads/2023/04/rosca-martelo-2.jpg" style="width: 200px; height: 150px;"><br>3	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                    </td>                    <td>
+                    
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Puxada frontal aberta</h3><img src="https://grandeatleta.com.br/blog/wp-content/uploads/2022/10/puxada-aberta-frente-polia-pulley-1024x597.jpg.webp" style="width: 200px; height: 150px;"><br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Remada unilateral maquina</h3><a href="https://www.youtube.com/shorts/C2U7EB3G3bk" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_JH1HM-R_f093cSdYFi0S2N0ED9bZMrG-wA&s" style="width: 200px; height: 150px;">
+</a><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Remada baixa na máquina ou barra</h3><a href="https://www.youtube.com/shorts/Ti_mGuh_Dig" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://i.vimeocdn.com/video/1056354948-dbcb0ce2f539dd09936a3ec621ae79cba70e89b3e0c9583a03fdc9bb1822f39e-d?f=webp" style="width: 200px; height: 150px;">
+</a><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Rosca direta </h3><img src="https://grandeatleta.com.br/wp-content/uploads/2018/07/rosca-direta-barra-reta-ou-w.jpg" style="width: 200px; height: 150px;"><br>(barra ou halter)<br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Elevação lateral </h3><img src="https://static.strengthlevel.com/images/exercises/dumbbell-lateral-raise/dumbbell-lateral-raise-800.jpg" style="width: 200px; height: 150px;"><br>(ombros)<br>3x	12a15<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Desenvolvimento máquina </h3><a href="https://www.youtube.com/shorts/uh0oZorifmM" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://treinomestre.com.br/wp-content/uploads/2023/06/desenvolvimento-maquina-e-halteres-musculos-como-fazer.jpg" style="width: 200px; height: 150px;">
+</a><br>(ombros)<br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                    </td>                    <td>
+                    
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Agachamento livre </h3><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-l_E7MSuum14egcdFkKNs0yrRZQA0qjoE0Q&s" style="width: 200px; height: 150px;"><br>(com halter ou barra no peito)<br>4x	8a10<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Leg press</h3><img src="https://hips.hearstapps.com/hmg-prod/images/leg-press-67b8637749b94.jpg" style="width: 200px; height: 150px;"><br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Cadeira extensora</h3><img src="https://treinomestre.com.br/wp-content/uploads/2016/08/cadeira-extensora-execucao-correta-.jpg.webp" style="width: 200px; height: 150px;"><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Cadeira flexora</h3><img src="https://treinomestre.com.br/wp-content/uploads/2017/11/cadeira-flexora-musculos-solicitados.jpg" style="width: 200px; height: 150px;"><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Stiff com halteres</h3><a href="https://www.youtube.com/shorts/N55yUjeWp4A" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://www.mundoboaforma.com.br/wp-content/uploads/2021/09/levantamento-terra-deadlift-stiff-com-halteres-1.gif" style="width: 200px; height: 150px;">
+</a><br>3x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Panturrilha maquina</h3><img src="https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Panturrilha-em-pe-no-aparelho.gif" style="width: 200px; height: 150px;"><br>4x	15a20<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Elevação de pernas </h3><a href="https://www.youtube.com/shorts/DWRWPS2hQAE" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://www.hipertrofia.org/blog/wp-content/uploads/2019/04/abdominal-invertido-com-pernas-na-vertical.gif" style="width: 200px; height: 150px;">
+</a><br>(solo)<br>3x   12a5<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                    </td>                    <td>
+                    
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Agachamento livre</h3><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-l_E7MSuum14egcdFkKNs0yrRZQA0qjoE0Q&s" style="width: 200px; height: 150px;"><br>(com carga)<br>4x	8a10 pouca repetição/muito peso<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Leg press 45°</h3><img src="https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2024/04/29/103147362-leg-press-45.jpg" style="width: 200px; height: 150px;"><br>4x	10a12<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Cadeira extensora</h3><img src="https://treinomestre.com.br/wp-content/uploads/2016/08/cadeira-extensora-execucao-correta-.jpg.webp" style="width: 200px; height: 150px;"><br>3x	12a15<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Afundo búlgaro</h3><a href="https://www.youtube.com/shorts/cCTC06-Yjqk" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  <img src="https://www.hipertrofia.org/blog/wp-content/uploads/2024/06/agachamento-bulgaro.gif" style="width: 200px; height: 150px;">
+</a><br><a href="https://www.youtube.com/shorts/BOaU_68CT0Q" onclick="window.open(this.href, 'popup', 'width=600,height=900'); return false;">
+  Video 2
+</a><br>3x	10 cada perna<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Abdução na máquina</h3><img src="https://meutreinoperfeito.com.br/wp-content/uploads/2021/03/Cadeira-Abdutora-Musculos-Trabalhados-800x800.jpg" style="width: 200px; height: 150px;"><br>3x	12a15<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                <div onclick=\"this.querySelector('input[type=checkbox]').click()\" class=\"atividade\"><h3>Panturrilha máquina</h3><img src="https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Panturrilha-em-pe-no-aparelho.gif" style="width: 200px; height: 150px;"><br>3x	15a20<br><br>
+                    <div class="exercise-container">
+                        <div class="exercise">
+                        </div>
+                    </div>
+                </div>
+                
+                    </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
